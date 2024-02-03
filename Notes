@@ -1,0 +1,16 @@
+If you have installed PlatformIO extensions into VSCode, then you will not be able to see the pio or platformio commands in a shell outside of VSCode.
+
+In addition, if you use VSCode’s Terminal->New Terminal option, the commands will not be available there either!
+
+To use them, Click on the PlatformIo icon on the left side toolbar (Ant/Alien head), then in the Quick Access list that appears, under Miscellaneous, choose New Terminal.
+
+Now you should be able to use the commands.
+
+My best advice is to follow the instructions at Redirecting... 888 to add the pio and platformio commands to your normal shell/command line sessions. That way, every terminal you open, inside or outside of VSCode, will have the commands available.
+
+HTH
+
+Cheers,
+Norm.
+
+For PlatformIO notes
