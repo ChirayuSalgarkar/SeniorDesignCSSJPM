@@ -15,52 +15,29 @@ void setup() {
 }
 
 void loop() {
-  //each loop, array of 7 reading read from each GPIO pin 
-  int reading[7];
- 
-  for(int i =0; i < 7; i++)
-  {
-    delay(100);
-    switch (i) {
-      case 0:
-        //reading[i] = analogRead(FORCE_SENSOR_PIN0);
-        Serial.write(analogRead(FORCE_SENSOR_PIN0));
-        break;
+  //each loop, take 7 readings read from each GPIO pin 
 
-      case 1:
-        //reading[i] = analogRead(FORCE_SENSOR_PIN1);
-        Serial.write("S1:" + analogRead(FORCE_SENSOR_PIN1));
-        break;
-      
-      case 2:
-        Serial.write("S1:" + analogRead(FORCE_SENSOR_PIN2));
-        //reading[i] = analogRead(FORCE_SENSOR_PIN2);
-        break;
+  Serial.write(":S0" + analogRead(FORCE_SENSOR_PIN0) );
+  delay(10);
 
-       case 3:
-        // reading[i] = analogRead(FORCE_SENSOR_PIN3);
-        Serial.write("S1:" + analogRead(FORCE_SENSOR_PIN3));
-        break;
+  Serial.write( ":S1" + analogRead(FORCE_SENSOR_PIN1) );
+  delay(10);
 
-      case 4:
-        // reading[i] = analogRead(FORCE_SENSOR_PIN4);
-        Serial.write("S1:" + analogRead(FORCE_SENSOR_PIN4));
-        break;
-      
-      case 5:
-        // reading[i] = analogRead(FORCE_SENSOR_PIN5);
-        Serial.write("S1:" + analogRead(FORCE_SENSOR_PIN5));
-        break;
+  Serial.write( ":S2" + analogRead(FORCE_SENSOR_PIN2) );
+  delay(10);
 
-      case 6:
-        // reading[i] = analogRead(FORCE_SENSOR_PIN6);
-        Serial.write("S1:" + analogRead(FORCE_SENSOR_PIN6));
-        break;
-    }
+  Serial.write( ":S3" + analogRead(FORCE_SENSOR_PIN3) );
+  delay(10);
 
-    
-    
-  }
+  Serial.write( ":S4" + analogRead(FORCE_SENSOR_PIN4) );
+  delay(10);
+
+  Serial.write( ":S5" + analogRead(FORCE_SENSOR_PIN5) );
+  delay(10);
+
+  Serial.write( ":S6" + analogRead(FORCE_SENSOR_PIN6) );
+  delay(10);
+
 }
 
 // put function definitions here:
