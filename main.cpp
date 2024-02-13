@@ -1,44 +1,51 @@
+/*
+ * This ESP32 code is created by esp32io.com
+ *
+ * This ESP32 code is released in the public domain
+ *
+ * For more detail (instruction and wiring diagram)\n visit https://esp32io.com/tutorials/esp32-force-sensor
+ */
 #include <Arduino.h>
 
-#define FORCE_SENSOR_PIN0 0 
-#define FORCE_SENSOR_PIN1 1 
-#define FORCE_SENSOR_PIN2 2 
-#define FORCE_SENSOR_PIN3 3 
-#define FORCE_SENSOR_PIN4 4 
-#define FORCE_SENSOR_PIN5 5 
-#define FORCE_SENSOR_PIN6 6 
-// put function declarations here:
+#define FORCE_SENSOR_PIN 36 // ESP32 pin GPIO36 (ADC0): the FSR and 10K pulldown are connected to A0
 
 void setup() {
-  // put your setup code here, to run once:
   Serial.begin(9600);
-  while (!Serial);
+
+  Serial.print("\n");
+  
 }
 
 void loop() {
-  //each loop, take 7 readings read from each GPIO pin 
+  int analogReading1 = analogRead(36);
+  int analogReading2 = analogRead(39);
+  int analogReading3 = analogRead(34);
+  int analogReading4 = analogRead(35);
+  int analogReading5 = analogRead(32);
+  int analogReading6 = analogRead(33);
+  int analogReading7 = analogRead(25);
 
-  Serial.write(":S0" + analogRead(FORCE_SENSOR_PIN0) );
-  delay(10);
 
-  Serial.write( ":S1" + analogRead(FORCE_SENSOR_PIN1) );
-  delay(10);
+  Serial.print("\nS1\n");
+  Serial.print(analogReading1); // print the raw analog reading
 
-  Serial.write( ":S2" + analogRead(FORCE_SENSOR_PIN2) );
-  delay(10);
+  Serial.print("\nS2\n");
+  Serial.print(analogReading2);
 
-  Serial.write( ":S3" + analogRead(FORCE_SENSOR_PIN3) );
-  delay(10);
+    Serial.print("\nS3\n");
+  Serial.print(analogReading3);
 
-  Serial.write( ":S4" + analogRead(FORCE_SENSOR_PIN4) );
-  delay(10);
+    Serial.print("\nS4\n");
+  Serial.print(analogReading4);
 
-  Serial.write( ":S5" + analogRead(FORCE_SENSOR_PIN5) );
-  delay(10);
+    Serial.print("\nS5\n");
+  Serial.print(analogReading5);
 
-  Serial.write( ":S6" + analogRead(FORCE_SENSOR_PIN6) );
-  delay(10);
+    Serial.print("\nS6\n");
+  Serial.print(analogReading6);
 
+    Serial.print("\nS7\n");
+  Serial.print(analogReading7);
+
+  delay(1000);
 }
-
-// put function definitions here:
